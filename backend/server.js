@@ -52,13 +52,13 @@ const PORT = process.env.PORT|| 5000;
 //  const allowedOrigins = ['https://vibechat-on.onrender.com'];
 
  app.use(cors({
-  origin:'*',
+  origin:'https://vibechat-on.onrender.com',
 }));
 
  const io = require("socket.io")(server, {
     pingTimeout : 60000,
     cors : {
-      origin:'*',
+     origin:'https://vibechat-on.onrender.com',
   },
  });
 
