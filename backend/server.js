@@ -7,7 +7,7 @@ const userRouters = require('./routes/userRoutes');
 const chatRouters = require('./routes/chatRoutes');
 const messageRouters = require('./routes/messageRoutes');
 const path = require('path');
-// const cors = require('cors');
+const cors = require('cors');
 
 dotenv.config();
 
@@ -47,11 +47,13 @@ app.use(errorHandler);
 const PORT = process.env.PORT|| 5000;
  const server = app.listen(PORT, console.log(`Server Started on PORT http://localhost:${PORT}`))
 
-//  app.use(cors({
-//   origin: 'http://localhost:3000/'
-// }));
+
 
  const allowedOrigins = ['httphttp://localhost:3000','https://vibechat-on.onrender.com'];
+
+ app.use(cors({
+  origin: allowedOrigins,
+}));
 
  const io = require("socket.io")(server, {
     pingTimeout : 60000,
