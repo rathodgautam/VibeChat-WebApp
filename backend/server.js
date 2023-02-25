@@ -16,9 +16,12 @@ const app = express();
 
 app.use(express.json()); // to accept json data
 
-// app.get("/",(req,res)=>{
-//  res.send( "API is Running");
-// })
+const corsOptions = {
+  origin: 'http://localhost:3000'
+};
+
+// Set up middleware to enable CORS
+app.use(cors(corsOptions));
 
 app.use("/api/user", userRouters);
 app.use("/api/chat", chatRouters);
