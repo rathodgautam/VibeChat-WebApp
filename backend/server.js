@@ -17,7 +17,7 @@ const app = express();
 app.use(express.json()); // to accept json data
 
 const corsOptions = {
-  origin: 'http://localhost:3000'
+  origin: 'https://vibechat-on.onrender.com'
 };
 
 // Set up middleware to enable CORS
